@@ -1,4 +1,4 @@
-const PI = 3.141592653589793238;
+const PI = Math.PI;
 
 function loop(e) {
     setTimeout(() => {
