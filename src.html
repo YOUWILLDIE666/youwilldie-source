@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>src.lmth</title>
+    <style>
+        /* da */
+        :root {
+          --ff: "Lucida Console", Courier, monospace;
+        }
+        code {
+            font-family: monospace;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        #hide {
+          color: black;
+          background-color: black;
+        }
+        
+        h1 {
+          font-family: var(--ff);
+          font-size: 20px;
+        }
+        
+        h2 {
+          font-family: var(--ff);
+          font-size: 50px;
+          color: ;
+        }
+        
+        #copy {
+          font-family: var(--ff);
+        }
+        
+        #regex {
+          transform: translateY(-355px) translateX(1400px);
+          font-size: 90px;
+          color: #ffa0d0;
+        }
+        
+        #ty {
+          transform: translateY(-480px) translateX(1400px);
+          color: #ffd1dc;
+        }
+        
+        #image {
+          transform: translateY(-745px);
+        }
+        
+        #pedo {
+          transform: translateY(-30px);
+        }
+    </style>
+</head>
+<body>
+    <h1>discarded feature, i wanted to create something stylish but uh... have fun with this im done with code blocks bye</h1>
+    <button id="generate-button">generate</button>
+    <code id="code-block"></code>
+    <script>
+        function generateRandomCode() {
+          const keywords = [
+            'function',
+            'var',
+            'let',
+            'const',
+            'if',
+            'else',
+            'NaN',
+            'void',
+            'while',
+            'for',
+            'switch',
+            'case',
+            'default',
+            'break',
+            'continue',
+            'return',
+            'new'
+          ];
+        
+          const operators = [
+            '+',
+            '-',
+            '*',
+            '/',
+            '%',
+            '==',
+            '!=',
+            '===',
+            '!==',
+            '<',
+            '>',
+            '<=',
+            '>=',
+            '&&',
+            '||',
+            '!'
+          ];
+        
+          const identifiers = ['x', 'y', 'z', 'foo', 'bar', 'baz'];
+          const literals = ['true', 'false', 'null', 'undefined', `${Math.floor(Math.random() * 1000)}`, '"hello"', "'hello'", "'hewwo'", "'ara ara~'"];
+        
+          let code = '';
+        
+          for (let i = 0; i < 10; i++) {
+            const keyword = keywords[Math.floor(Math.random() * keywords.length)];
+            const operator = operators[Math.floor(Math.random() * operators.length)];
+            const identifier = identifiers[Math.floor(Math.random() * identifiers.length)];
+            const literal = literals[Math.floor(Math.random() * literals.length)];
+            code += `${keyword} ${identifier} ${operator} ${literal};\n`;
+          }
+        
+          return code;
+      }
+
+        // thank you regex uwo
+        function tokenizeCode(code) {
+            const tokens = [];
+            const regex = /\s*([a-zA-Z_$][a-zA-Z_$0-9]*)\s*|\s*([=<>!]+)\s*|\s*([0-9]+)\s*|\s*(".*?")\s*|\s*'([^']*)'\s*|\s*\(`(.*?)`\)\s*|\s*\[(.*?)\]\s*|\s*\{(.*?)\}\s*|\s*(\?)\s*|\s*(\.)\s*|\s*(,)\s*|\s*(:)\s*|\s*(;)\s*|\s*(\{)\s*|\s*(\})\s*|\s*(\()|\s*(\))|\s*(\[)|\s*(\])|\s*(<)|\s*(>)|\s*(\/)|\s*(\\)/g;
+            let match; //init match
+            while ((match = regex.exec(code))!== null) {
+                tokens.push({
+                    type: match[1]? 'identifier' : match[2]? 'operator' : match[3]? 'number' : match[4]? 'string' : match[5]? 'string' : match[6]? 'regex' : match[7]? 'array' : match[8]? 'object' : match[9]? 'conditional' : match[10]? 'accessor' : match[11]? 'comma' : match[12]? 'colon' : match[13]? 'semicolon' : match[14]? 'lbrace' : match[15]? 'rbrace' : match[16]? 'lparen' : match[17]? 'rparen' : match[18]? 'lbracket' : match[19]? 'rbracket' : match[20]? 'lt' : match[21]? 'gt' : match[22]? 'slash' : match[23]? 'backslash' : 'unknown',
+                    value: match[0]
+                });
+            }
+            return tokens;
+        }
+
+        // highlight
+        function highlightCode(code) {
+            const tokens = tokenizeCode(code);
+            let highlightedCode = '';
+            tokens.forEach(token => {
+                switch (token.type) {
+                    case 'identifier':
+                        highlightedCode += `<span style="color: blue">${token.value}</span>`;
+                        break;
+                    case 'operator':
+                        highlightedCode += `<span style="color: red">${token.value}</span>`;
+                        break;
+                    case 'number':
+                        highlightedCode += `<span style="color: green">${token.value}</span>`;
+                        break;
+                    case 'string':
+                        highlightedCode += `<span style="color: purple">${token.value}</span>`;
+                        break;
+                    default:
+                        highlightedCode += token.value;
+                }
+            });
+            return highlightedCode;
+        }
+
+        const generateButton = document.getElementById('generate-button');
+        const codeBlock = document.getElementById('code-block');
+        generateButton.addEventListener('click', () => {
+            const code = generateRandomCode();
+            codeBlock.textContent = '';
+            codeBlock.innerHTML = highlightCode(code);
+        });
+        
+        window.onload = () => {
+            const code = generateRandomCode();
+            codeBlock.textContent = '';
+            codeBlock.innerHTML = highlightCode(code);
+        };
+    </script>
+    <!--<button id="dark-mode-button">Toggle Dark Mode</button>
+
+    <script>
+      const darkModeButton = document.getElementById('dark-mode-button');
+      let isDarkMode = false;
+    
+      darkModeButton.addEventListener('click', () => {
+        isDarkMode =!isDarkMode;
+        if (isDarkMode) {
+          document.body.style.background = '#333';
+          document.body.style.color = '#fff';
+          document.getElementById('hide').style.backgroundColor = '#fff'; // corrected here
+          document.getElementById('hide').style.color = '#fff';
+          document.getElementById('no').style.color = 'red';
+          document.querySelectorAll('code').forEach(code => {
+            code.style.background = '#444';
+            code.style.color = '#fff';
+          });
+        } else {
+          document.body.style.background = '';
+          document.body.style.color = '';
+          document.getElementById('hide').style.backgroundColor = '';
+          document.getElementById('hide').style.color = '';
+          document.getElementById('no').style.color = '';
+          document.querySelectorAll('code').forEach(code => {
+            code.style.background = '';
+            code.style.color = '';
+          });
+        }
+    });
+    </script>-->
+    <script>
+    function a() {
+      navigator.clipboard.writeText('creative#0095');
+    
+      const i = document.createElement("div");
+      i.id = "copy";
+      i.style.position = "fixed";
+      i.style.bottom = "20px";
+      i.style.left = "50%";
+      i.style.fontSize = "60px";
+      i.style.transform = "translateX(-50%)";
+      i.style.opacity = 1;
+      /*if (!isDarkMode){
+        i.style.color = "#000";
+      } else {
+        i.style.color = "#fff";
+      }*/
+      /*i.style.background = "rgba(0, 0, 0, 0.5)";
+      i.style.padding = "10px";
+      i.style.borderRadius = "10px";*/
+    
+      const cnt = document.createTextNode("COPIED.");
+      i.appendChild(cnt);
+    
+      document.body.appendChild(i);
+      
+      i.animate(
+        [
+          { opacity: 1, transform: "translateY(0)" },
+          { opacity: 0, transform: "translateY(-100px)" }
+        ],
+        {
+          duration: 4000,
+          fill: "forwards"
+        }
+      );
+      
+      setTimeout(() => {
+        i.remove();
+      }, 4000);
+    }
+    </script>
+    <br><br><br><h1>SHUT THE F<span id="hide">###</span> UP.</h1>
+    <br><img src="https://c.tenor.com/PFeI000LYHkAAAAC/tenor.gif" id="pedo">
+    <h2 id="regex">RegEx,</h2>
+    <br><h1 id="image">if you want answers dm <a href="#" onclick="a();" id="no">image9000</a> on discord</h1>
+    <h2 id="ty">thank you >ω<</h2><!--no error. die-->
+</body>
+</html>
