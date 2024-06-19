@@ -1,0 +1,23 @@
+/* Color Palette */
+:root {
+  --primary-color: #3c3d45;
+  --accent-color: #474747;
+}
+
+h1 {
+  font-family: "Lucida Console", Courier, monospace;
+  padding-bottom: 50px;
+  color: var(--primary-color);
+  font-size: 30px;
+  text-align: center;
+}
+
+/*b {
+  font-family: "Lucida Console", Courier, monospace;
+  color: var(--primary-color);
+}*/
+
+a {
+  font-family: "Lucida Console", Courier, monospace;
+  color: var(--accent-color);
+}
