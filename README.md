@@ -1,4 +1,4 @@
-# youwilldie: Source v1.21
+# youwilldie: Source v1.21.1
 the source code of https://youwilldie.neocities.org
 feel free to download or fork
 # Changelog:
