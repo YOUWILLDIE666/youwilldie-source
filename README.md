@@ -1,5 +1,5 @@
 # youwilldie: Source v1.22
-the sоurce code of https://youwilldie.neocities.org feel free to do whatever with it
+the source code of https://youwilldie.neocities.org feel free to do whatever with it
 # Changelog:
  * v1.22: deleted `die.png`, added a new variation of favicon, added `not_found.html`, updated `src.html`'s "SOURCE" button image, optimize `damned.js`, remove `NaN` from `keywords` in `src.html`
  * v1.21.2: deleted `dump.png`, added "SOURCE" button to /src webpage
