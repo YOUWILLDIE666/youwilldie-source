@@ -1,4 +1,4 @@
-const t = ["tuhmb.png", "haskell2.png"];
+const t = ["tuhmb.png", "haskell2.png", "hell.png"];
 
 function i() {
   const randomIndex = Math.floor(Math.random() * t.length);
