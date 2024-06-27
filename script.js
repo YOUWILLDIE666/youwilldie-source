@@ -3,8 +3,8 @@ const ctx = canvas.getContext('2d');
 
 let x = 0;
 let y = 0;
-let dx = 20;
-let dy = 20;
+let dx = 20; // MIN
+let dy = 20; // MIN
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
