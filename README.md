@@ -1,4 +1,4 @@
-# youwilldie: Source v1.22.3
+# youwilldie: Source v1.22.3.1
 the source code of https://youwilldie.neocities.org feel free to do whatever with it
 # Changelog:
  * v1.22.3.1: entirely remove `og`'s from <a href="https://youwilldie.neocities.org/stupid">stupid.html</a>
