@@ -1,6 +1,7 @@
-# youwilldie: Source v1.22.4
+# youwilldie: Source v1.22.4.1
 the source code of https://youwilldie.neocities.org feel free to do whatever with it
 # Changelog:
+ * v1.22.4.1: entirely remove `og`'s from <a href="https://youwilldie.neocities.org/uwu">not_found.html</a>
  * v1.22.4: delete `addon.js`, add `icon.png`
  * v1.22.3.1: entirely remove `og`'s from <a href="https://youwilldie.neocities.org/stupid">stupid.html</a>
  * v1.22.3: **550 visitors special.** now you can visit <a href="https://youwilldie.neocities.org/stupid">this</a> website and get called stupid 👍
