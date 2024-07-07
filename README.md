@@ -10,4 +10,4 @@ the source code of https://youwilldie.neocities.org feel free to do whatever wit
  * v1.21.1: ~~add `dump.png` which is used in <a href="https://github.com/YOUWILLDIE666/YOUWILLDIE666/blob/main/README.md">this</a> file~~
  * v1.21: add `<meta>`'s, random icon support to `index.html` and `src.html`, delete `code.css`, add **changelogs**
  * v1.2: now on **<a href="https://github.com/topics/how-to-die">GitHub</a>**!
- * past versions: null
+ * past versions: `undefined`
