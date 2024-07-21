@@ -1,6 +1,6 @@
 # youwilldie: Source v1.22.4.1
 the source code of https://youwilldie.neocities.org feel free to do whatever with it
-### TODO: [finish the drawing html ✖️], [fix bugs ✖️], [merge `*.css` into their webpages ✔️]
+### TODO: <ins>finish the drawing html ✖️</ins>, <ins>fix bugs ✖️</ins>, <ins>merge `*.css` into their webpages ✔️</ins>
 # Changelog:
  * v1.22.4.1: entirely remove `og`'s from <a href="https://youwilldie.neocities.org/uwu">not_found.html</a>
  * v1.22.4: delete `addon.js`, add `icon.png`
