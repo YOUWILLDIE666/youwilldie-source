@@ -1,26 +1,27 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+const radius = 20;
 
-let x = 0;
-let y = 0;
-let dx = 20; // MIN
-let dy = 20; // MIN
+let x = radius;
+let y = radius;
+let dx = 2; // reduced
+let dy = 2; // reduced
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = `hsl(${x}, 100%, 50%)`;
     ctx.beginPath();
-    ctx.arc(x, y, 20, 0, 2 * Math.PI);
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
     ctx.fill();
     x += dx;
     y += dy;
-    if (x + 20 > canvas.width || x - 20 < 0) {
+    if (x + radius > canvas.width || x - radius < 0) {
         dx = -dx;
     }
-    if (y + 20 > canvas.height || y - 20 < 0) {
+    if (y + radius > canvas.height || y - radius < 0) {
         dy = -dy;
     }
     requestAnimationFrame(draw);
 }
 
-draw();
+document.addEventListener('DOMContentLoaded', draw);
