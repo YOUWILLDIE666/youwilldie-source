@@ -1,6 +1,6 @@
 # youwilldie: Source v1.23
 the source code of https://youwilldie.neocities.org feel free to do whatever with it
-### TODO: <ins>finish the thing i wanted to do with source.html</ins>, <ins>finish the drawing html ❔</ins>, <ins>fix bugs ❔</ins>, <ins>merge `*.css` into their webpages ✔️</ins>
+### TODO: <ins>finish the thing i wanted to do with source.html ❌❌❌</ins>, <ins>finish the drawing html ❔</ins>, <ins>fix bugs ❔</ins>, <ins>merge `*.css` into their webpages ✔️</ins>
 # Changelog:
  * v1.23: fix the `translateX();` of the main web page, add drawing webpage, add `lust.html`, optimize `*.js` files
  * v1.22.4.1: entirely remove `og`'s from <a href="https://youwilldie.neocities.org/uwu">not_found.html</a>
